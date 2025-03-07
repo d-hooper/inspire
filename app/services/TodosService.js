@@ -3,9 +3,6 @@ import { Todo } from "../models/Todo.js"
 import { api } from "../utils/Axios.js"
 
 class TodoService {
-async toggleCompleteTodo(taskId) {
-    await console.log('service toggling task with id: ', taskId);
-  }
 
 
   async getTodos() {
@@ -15,6 +12,12 @@ async toggleCompleteTodo(taskId) {
     console.log('Tasks', AppState.todos);
   }
 
+  async toggleCompleteTodo(taskId) {
+    const foundTask = AppState.todos.find(todo => todo.id == taskId)
+    foundTask.completed = !foundTask.completed
+    const response = await api.put(`api/todos/${taskId}`, foundTask)
+    AppState.emit('todos')
+  }
 }
 
 export const todosService = new TodoService()

@@ -2,7 +2,7 @@ export class Todo {
   constructor(data) {
     this.id = data.id
     this.description = data.description
-    this.completed = false
+    this.completed = data.completed
   }
 
 get todoItemTemplate() {
