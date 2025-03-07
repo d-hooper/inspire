@@ -30,13 +30,13 @@
           <div class="mt-3">
             <div class="fs-5 d-flex justify-content-between align-items-center">
               <h2 class="fs-5 mb-0">My Tasks</h2>
-              <span id="numOfTasks">0 tasks remaining</span>
+              <span id="numOfTasks" class="dec">0 tasks remaining</span>
             </div>
 
             <div id="todoForm">
               <form onsubmit="app.todosController.addTodo()">
                 <div class="d-flex justify-content-between">
-                  <div class="input-group mt-2 mb-3">
+                  <div class="input-group my-2">
                     <input type="text" id="taskDescription" name="description" class="form-control" maxlength="500"
                            required placeholder="Add task..." aria-label="Add task" aria-describedby="button-addon2">
                     <button type="submit" class="btn btn-outline-dark" id="button-addon2"
@@ -50,6 +50,11 @@
             <div id="todoList">
 
             </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div id="imgAttribution">
+
           </div>
         </div>
       </div>
