@@ -6,10 +6,17 @@ export class ImagesController {
   
   constructor() {
     console.log('🖼️ controller');
+    AppState.on('activeImage', this.drawImage)
     this.getImage()
   }
 
-
+  drawImage() {
+    const image = AppState.activeImage
+    const activeContent = image.attributionTemplate
+    const activeImageElem = document.getElementById('imgAttribution')
+    activeImageElem.innerHTML = activeContent
+    document.body.style.backgroundImage  = `url(${image.imgUrls.full})`
+  }
 
   async getImage() {
     try {
