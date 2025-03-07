@@ -10,6 +10,11 @@ main {
 
 }
 
+.delete-task:hover {
+  font-weight: bold;
+  opacity: 70%;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;

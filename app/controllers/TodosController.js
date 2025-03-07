@@ -42,7 +42,21 @@ export class TodosController {
       await todosService.toggleCompleteTodo(taskId)
     } catch (error) {
       console.log('COULD NOT UPDATE TODO LIST ITEM', error);
-      Pop.error(error, 'Could not update To-Do List Item')
+      Pop.error(error, 'Could not update To-Do list item')
+    }
+  }
+  
+  async deleteTodo(taskId) {
+    try {
+      const confirmed = await Pop.confirm('Are you sure you would like to delete this task?', 'This cannot be undone.', 'Yes', 'No')     
+      if (!confirmed) {
+        return
+      }
+      todosService.deleteTodo(taskId)
+
+    } catch (error) {
+      console.log('COULD NOT DELETE TODO LIST ITEM', error);
+      Pop.error(error, 'Could not delete To-Do list item')
     }
   }
 }
