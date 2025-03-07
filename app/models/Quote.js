@@ -8,8 +8,12 @@ export class Quote{
 
   get quoteTemplate() {
     return `
-    <p>${this.quote}</p>
-    <p>- ${this.author}</p>
+    <div>
+      <p class="mb-0">${this.quote}</p>
+    </div>
+    <div>
+      <p class="mb-0 text-end">- ${this.author}</p>
+    </div>
     `
   }
 }

@@ -10,9 +10,9 @@ authController = new AuthController()
 
 // imagesController = new ImagesController()
 
-quotesController = new QuoteController()
+// quotesController = new QuoteController()
 
-todosController = new TodosController()
+// todosController = new TodosController()
 
 weatherController = new WeatherController()
 
