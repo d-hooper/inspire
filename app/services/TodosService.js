@@ -13,7 +13,9 @@ class TodoService {
   }
   
   async addTodo(descriptionData) {
-    await console.log('service adding task: ', descriptionData);
+    const response = await api.post('api/todos', descriptionData)
+    const newTask = new Todo(response.data)
+    AppState.todos.push(newTask)
   }
   
   async toggleCompleteTodo(taskId) {

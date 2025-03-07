@@ -8,6 +8,14 @@ export class Todo {
 get todoItemTemplate() {
   return /*html*/`
   
+  <!-- <div class="input-group mb-3">
+  <div class="input-group-text">
+    <input class="form-check-input mt-0" type="checkbox" ${this.completed ? 'checked' : ''} aria-label="Checkbox for following task">
+  </div>
+  <input type="text" class="form-control" aria-label="Task with checkbox to mark completed">
+</div> -->
+
+
   <div class="d-flex mx-2 align-items-center justify-content-between">
     <div class="d-flex">
     <input role="button" onchange="app.todosController.toggleCompleteTodo('${this.id}')" type="checkbox" ${this.completed ? 'checked' : ''} title="Mark task complete">

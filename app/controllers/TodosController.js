@@ -1,5 +1,6 @@
 import { AppState } from "../AppState.js";
 import { todosService } from "../services/TodosService.js";
+import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
 
 export class TodosController {
@@ -42,8 +43,10 @@ export class TodosController {
       event.preventDefault()
       const formElem = event.target
       // @ts-ignore
-      const descriptionData = formElem.description.value
+      const descriptionData = getFormData(formElem)
       await todosService.addTodo(descriptionData)
+      // @ts-ignore
+      formElem.reset()
     } catch (error) {
       console.log('COULD NOT ADD TODO LIST ITEM', error);
       Pop.error(error, 'Could not add To-Do list item')
