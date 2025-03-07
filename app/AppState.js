@@ -3,6 +3,7 @@ import { Identity } from './auth/Identity.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 import { Todo } from './models/Todo.js'
 import { Image } from './models/Image.js'
+import { Quote } from './models/Quote.js'
 
 class ObservableAppState extends EventEmitter {
 
@@ -15,6 +16,9 @@ class ObservableAppState extends EventEmitter {
   
   /** @type { Image } */
   activeImage = null
+  
+  /** @type { Quote } */
+  activeQuote = null
 
 }
 
