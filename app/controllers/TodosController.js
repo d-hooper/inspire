@@ -8,6 +8,8 @@ export class TodosController {
     console.log('✔️ controller');
     AppState.on('identity', this.getTodos)
     AppState.on('todos', this.drawTodoList)
+    AppState.on('todos', this.drawTodosRemaining)
+
   }
 
   drawTodoList() {
@@ -17,6 +19,14 @@ export class TodosController {
     const todoListElem = document.getElementById('todoList')
     todoListElem.innerHTML = tasksContent
   }
+  
+  drawTodosRemaining() {
+    const tasks = AppState.todos
+    const incompleteTasks = tasks.filter(task => !task.completed)
+    const totalNum = incompleteTasks.length
+    const numOfTasksRemainingElem = document.getElementById('numOfTasks')
+    numOfTasksRemainingElem.innerText = `${totalNum} tasks remaining`
+  }
 
   async getTodos() {
     try {
@@ -24,6 +34,15 @@ export class TodosController {
     } catch (error) {
       console.log('COULD NOT GET TODO LIST', error);
       Pop.error(error, 'Could not get To-Do List')
+    }
+  }
+  
+  async toggleCompleteTodo(taskId) {
+    try {
+      await todosService.toggleCompleteTodo(taskId)
+    } catch (error) {
+      console.log('COULD NOT UPDATE TODO LIST ITEM', error);
+      Pop.error(error, 'Could not update To-Do List Item')
     }
   }
 }
