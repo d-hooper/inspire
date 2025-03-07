@@ -6,9 +6,9 @@ export class WeatherController {
 
   constructor() {
     console.log('🌡️☁️ controller');
+    setInterval(this.drawTime, 1000)
     AppState.on('weatherCity', this.drawWeather)
     this.getWeather()
-    this.drawTime()
   }
 
   drawWeather() {
@@ -20,7 +20,6 @@ export class WeatherController {
 
   drawTime() {
     const time = new Date().toLocaleTimeString()
-    console.log(time);
     const timeElem = document.getElementById('time')
     timeElem.innerText = time.toString()
   }
@@ -32,6 +31,10 @@ export class WeatherController {
       console.error('COULD NOT GET WEATHER DATA', error)
       Pop.error(error, 'Could not retrieve weather data')
     }
+  }
+
+  changeTempPreference() {
+    weatherService.changeTempPreference()
   }
 
 }

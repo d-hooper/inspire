@@ -11,6 +11,11 @@ main {
 
 }
 
+.over-picture {
+  background-color: rgba(0, 0, 0, 0.408);
+  backdrop-filter: blur(10px);
+}
+
 .delete-task:hover {
   font-weight: bold;
   opacity: 70%;
