@@ -37,6 +37,19 @@ export class TodosController {
     }
   }
   
+  async addTodo() {
+    try {
+      event.preventDefault()
+      const formElem = event.target
+      // @ts-ignore
+      const descriptionData = formElem.description.value
+      await todosService.addTodo(descriptionData)
+    } catch (error) {
+      console.log('COULD NOT ADD TODO LIST ITEM', error);
+      Pop.error(error, 'Could not add To-Do list item')
+    }
+  }
+
   async toggleCompleteTodo(taskId) {
     try {
       await todosService.toggleCompleteTodo(taskId)

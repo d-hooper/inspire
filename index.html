@@ -33,6 +33,17 @@
           <span id="numOfTasks">0 tasks remaining</span>
         </div>
 
+        <div id="todoForm">
+          <form onsubmit="app.todosController.addTodo()">
+            <label for="taskDescription" class="d-block">Description</label>
+            <div class="d-flex justify-content-between">
+              <input type="text" id="taskDescription" name="description" class="w-100 rounded me-2" maxlength="500" required placeholder="Buy apples...">
+              <button type="submit" class="btn btn-outline-dark p-1">
+                <span class="mdi mdi-plus-thick" title="Add task to to-do list"></span>
+              </button>
+            </div>
+          </form>
+        </div>
         <div id="todoList">
   
         </div>

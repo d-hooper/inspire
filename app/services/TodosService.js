@@ -12,6 +12,10 @@ class TodoService {
     console.log('Tasks', AppState.todos);
   }
   
+  async addTodo(descriptionData) {
+    await console.log('service adding task: ', descriptionData);
+  }
+  
   async toggleCompleteTodo(taskId) {
     const foundTask = AppState.todos.find(todo => todo.id == taskId)
     foundTask.completed = !foundTask.completed
