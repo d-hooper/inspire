@@ -8,7 +8,7 @@ class App {
 
 authController = new AuthController()
 
-imagesController = new ImagesController()
+// imagesController = new ImagesController()
 
 quotesController = new QuoteController()
 
@@ -19,5 +19,3 @@ weatherController = new WeatherController()
 }
 
 window['app'] = new App()
-
-
