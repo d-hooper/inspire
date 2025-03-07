@@ -22,7 +22,7 @@ export class ImagesController {
     try {
       await imageService.getImage()
     } catch (error) {
-      console.log('COULD NOT GET IMAGE', error);
+      console.error('COULD NOT GET IMAGE', error);
       Pop.error(error, 'Could not retrieve image')
     }
   }

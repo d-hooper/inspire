@@ -21,7 +21,7 @@ export class QuoteController {
     try {
       await quotesService.getQuote()
     } catch (error) {
-      console.log('COULD NOT GET QUOTE', error);
+      console.error('COULD NOT GET QUOTE', error);
       Pop.error(error, 'Could not retrieve a quote')
     }
   }

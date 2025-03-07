@@ -48,7 +48,7 @@ export class TodosController {
       // @ts-ignore
       formElem.reset()
     } catch (error) {
-      console.log('COULD NOT ADD TODO LIST ITEM', error);
+      console.error('COULD NOT ADD TODO LIST ITEM', error);
       Pop.error(error, 'Could not add To-Do list item')
     }
   }
@@ -57,7 +57,7 @@ export class TodosController {
     try {
       await todosService.toggleCompleteTodo(taskId)
     } catch (error) {
-      console.log('COULD NOT UPDATE TODO LIST ITEM', error);
+      console.error('COULD NOT UPDATE TODO LIST ITEM', error);
       Pop.error(error, 'Could not update To-Do list item')
     }
   }
@@ -71,7 +71,7 @@ export class TodosController {
       todosService.deleteTodo(taskId)
 
     } catch (error) {
-      console.log('COULD NOT DELETE TODO LIST ITEM', error);
+      console.error('COULD NOT DELETE TODO LIST ITEM', error);
       Pop.error(error, 'Could not delete To-Do list item')
     }
   }
