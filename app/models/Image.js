@@ -18,12 +18,14 @@ export class Image {
 
   get attributionTemplate() {
     return `
-    <div >
-      <div class="d-flex align-items-center">
+    <div>
+      <div class="d-flex align-items-center justify-content-between">
         <span class="mdi mdi-camera-outline fs-4"></span>
         <p class="mb-0">${this.attribution}</p>
       </div>
-      ${this.description}
+      <div class="d-flex justify-content-center">
+        ${this.description}
+      </div>
     </div>
     `
   }
