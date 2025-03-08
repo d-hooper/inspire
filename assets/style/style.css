@@ -9,11 +9,20 @@ body {
 
 main {
   flex-grow: 1;
-
 }
 
 .over-picture {
   background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(15px);
+}
+
+.link a {
+  text-decoration: none;
+  color: whitesmoke
+}
+
+.link:hover {
+  background-color: rgba(67, 67, 67, 0.15);
   backdrop-filter: blur(15px);
 }
 
@@ -22,6 +31,13 @@ main {
   backdrop-filter: blur(15px);
 }
 
+.weather-card:hover {
+  border-color: white!important;
+  border-width: 3px;
+}
+.weather-card {
+  transition: border-color 0.25s ease-in-out;
+}
 
 .delete-task:hover {
   font-weight: bold;

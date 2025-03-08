@@ -25,34 +25,38 @@
   <main>
 
     <div class="container fw-bold">
+      <!-- TODO Make To-Do list dynamically register -->
       <div class="row justify-content-between">
         <div class="col-xl-3">
-          <div class="mt-3 over-picture p-2">
-            <div class="fs-5 d-flex justify-content-between align-items-center">
+          <div class="mt-3 over-picture p-2 link">
+            <a class="fs-5 d-flex justify-content-between align-items-center" data-bs-toggle="collapse"
+                 href="#collapseTasks" role="button" aria-expanded="false" aria-controls="collapseTasks">
               <h2 class="fs-5 fw-bold mb-0">My Tasks</h2>
               <span id="numOfTasks" class="dec">0 tasks remaining</span>
-            </div>
-
-            <div id="todoForm">
-              <form onsubmit="app.todosController.addTodo()">
-                <div class="d-flex justify-content-between">
-                  <div class="input-group my-2">
-                    <input type="text" id="taskDescription" name="description" class="form-control" maxlength="500"
-                           required placeholder="Add task..." aria-label="Add task" aria-describedby="button-addon2">
-                    <button type="submit" class="btn btn-outline-dark" id="button-addon2"
-                            title="Add task to to-do list">
-                      <span class="mdi mdi-plus-thick"></span>
-                    </button>
+            </a>
+            <div class="collapse" id="collapseTasks">
+              <div id="todoForm">
+                <form onsubmit="app.todosController.addTodo()">
+                  <div class="d-flex justify-content-between">
+                    <div class="input-group my-2">
+                      <input type="text" id="taskDescription" name="description" class="form-control" maxlength="500"
+                             required placeholder="Add task..." aria-label="Add task" aria-describedby="button-addon2">
+                      <button type="submit" class="btn btn-outline-dark" id="button-addon2"
+                              title="Add task to to-do list">
+                        <span class="mdi mdi-plus-thick"></span>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </form>
-            </div>
-            <div id="todoList">
+                </form>
+              </div>
+              <div id="todoList">
+              </div>
             </div>
           </div>
         </div>
         <div class="col-xl-2">
-          <div id="imgAttribution" class="over-picture p-2 mt-3 d-flex align-items-center">
+          <!-- TODO Make description dynamically available by clicking on camera icon -->
+          <div id="imgAttribution" class="over-picture p-2 mt-3 d-flex align-items-center link">
           </div>
         </div>
       </div>
@@ -71,7 +75,7 @@
       <div class="row align-items-end flex-grow-1 mt-3">
         <div class="col-12">
           <div class="rounded-5 weather-time text-light p-3 mx-1 d-flex justify-content-between align-items-center">
-            <div id="weatherInfo"></div>
+            <div id="weatherInfo" class="weather-card border rounded"></div>
             <div class="display-3 mx-auto fw-bold" id="time">
             </div>
             <div id="authstate"></div>
