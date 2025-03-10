@@ -8,9 +8,10 @@ export class TodosController {
   constructor() {
     console.log('✔️ controller');
     AppState.on('identity', this.getTodos)
+    AppState.on('identity', this.showTodos)
+    AppState.on('identity', this.drawTodoList)
     AppState.on('todos', this.drawTodoList)
     AppState.on('todos', this.drawTodosRemaining)
-
   }
 
   drawTodoList() {
@@ -27,6 +28,16 @@ export class TodosController {
     const totalNum = incompleteTasks.length
     const numOfTasksRemainingElem = document.getElementById('numOfTasks')
     numOfTasksRemainingElem.innerText = `${totalNum} tasks remaining`
+  }
+
+  showTodos() {
+    const identity = AppState.identity
+    if (identity == null){
+      console.log(identity);
+      return
+    }
+    console.log(identity);
+    document.getElementById('tasksController').classList.remove('d-none')
   }
 
   async getTodos() {

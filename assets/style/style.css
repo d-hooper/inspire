@@ -16,6 +16,11 @@ main {
   backdrop-filter: blur(15px);
 }
 
+.img-description {
+  max-height: 10dvh;
+  overflow-y: scroll;
+}
+
 .link a {
   text-decoration: none;
   color: whitesmoke

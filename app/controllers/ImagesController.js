@@ -26,4 +26,12 @@ export class ImagesController {
       Pop.error(error, 'Could not retrieve image')
     }
   }
+
+  showAttributionToast() {
+    const image = AppState.activeImage
+    if (image.description != '' || null || undefined) {
+      return
+    }
+    Pop.toast('No description provided')
+  }
 }
